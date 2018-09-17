@@ -23,8 +23,8 @@ type Manifest struct {
 	// created-at
 	//
 	// creation data
-	// Format: date-time
-	CreatedAt strfmt.DateTime `json:"created_at,omitempty"`
+	// Pattern: \d{4}-\d{1,2}-\d{1,2}T\d{2}:\d{2}:\d{2}\.\d+
+	CreatedAt string `json:"created_at,omitempty"`
 
 	// media-type
 	//
@@ -89,7 +89,7 @@ func (m *Manifest) validateCreatedAt(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.FormatOf("created_at", "body", "date-time", m.CreatedAt.String(), formats); err != nil {
+	if err := validate.Pattern("created_at", "body", string(m.CreatedAt), `\d{4}-\d{1,2}-\d{1,2}T\d{2}:\d{2}:\d{2}\.\d+`); err != nil {
 		return err
 	}
 
