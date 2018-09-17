@@ -858,7 +858,7 @@ definitions:
         description: manifest-type
       created_at:
         type: string
-        format: date-time
+        pattern: '\d{4}-\d{1,2}-\d{1,2}T\d{2}:\d{2}:\d{2}\.\d+'
         description: creation data
         title: created-at
       metadata:
@@ -935,11 +935,11 @@ definitions:
           description: List channels for that release
       created_at:
         type: string
-        format: date-time
+        pattern: '\d{4}-\d{1,2}-\d{1,2}T\d{2}:\d{2}:\d{2}.\d+'
         title: created_at
         description: Package creation date
       content:
-        $ref: "#/definitions/Manifest"
+        $ref: "#/definitions/OciDescriptor"
       package:
         type: string
         title: package-name
