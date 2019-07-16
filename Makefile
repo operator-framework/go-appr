@@ -10,8 +10,6 @@ regen: appr.spec.yaml
 	@rm -f ./client/go.sum
 	@go mod vendor
 	@go mod tidy
-	@echo Fixing bad return type for Package list...
-	@sed -i "s/\[\]map\[string\]interface{}/[]Package/gi" ./client/api_package.go
 	@echo "Fixing bad option names... (https://github.com/OpenAPITools/openapi-generator/pull/3206)"
 	@sed -i "s/PullPackageOpts/PackagePullPackageOpts/gi" ./client/api_package.go
 	@sed -i "s/PullPackageJsonOpts/PackagePullPackageJsonOpts/gi" ./client/api_package.go

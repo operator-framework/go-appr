@@ -23,9 +23,12 @@ func main() {
 	}
 
 	log.Printf("success - found [%d] package(s)\n", len(packages))
+	for _, p := range packages {
+		log.Printf("%s - %v", p.Name, p.Releases)
+	}
 }
 
-func listPackages(client *apprclient.APIClient) ([]apprclient.Package, error) {
+func listPackages(client *apprclient.APIClient) ([]apprclient.PackageDescription, error) {
 	packages, _, err := client.PackageApi.ListPackages(context.TODO(),
 		&apprclient.ListPackagesOpts{Namespace: optional.NewString("community-operators")})
 	if err != nil {

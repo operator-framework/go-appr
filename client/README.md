@@ -60,6 +60,7 @@ Class | Method | HTTP request | Description
  - [Manifest](docs/Manifest.md)
  - [OciDescriptor](docs/OciDescriptor.md)
  - [Package](docs/Package.md)
+ - [PackageDescription](docs/PackageDescription.md)
  - [PostPackage](docs/PostPackage.md)
  - [PullJson](docs/PullJson.md)
  - [Version](docs/Version.md)

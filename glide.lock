@@ -1,0 +1,33 @@
+hash: e8f8dbde86659a6f8b8fb94d8e61369bc190cbe2d297b084e11b539199578337
+updated: 2019-07-16T16:09:33.366383-04:00
+imports:
+- name: github.com/antihax/optional
+  version: ca021399b1a6796ecb758292c6311ce0b28857fc
+- name: github.com/ecordell/go-appr
+  version: bee8813bcbcdfdf94f4691b038b5deb81d06f6ba
+  subpackages:
+  - client
+- name: github.com/golang/protobuf
+  version: 4bd1920723d7b7c925de087aa32e2187708897f7
+  subpackages:
+  - proto
+- name: golang.org/x/net
+  version: 1c05540f6879653db88113bc4a2b70aec4bd491f
+  subpackages:
+  - context
+  - context/ctxhttp
+- name: golang.org/x/oauth2
+  version: 0f29369cfe4552d0e4bcddc57cc75f4d7e672a33
+  subpackages:
+  - internal
+- name: google.golang.org/appengine
+  version: b2f4a3cf3c67576a2ee09e1fe62656a5086ce880
+  subpackages:
+  - internal
+  - internal/base
+  - internal/datastore
+  - internal/log
+  - internal/remote_api
+  - internal/urlfetch
+  - urlfetch
+testImports: []

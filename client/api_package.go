@@ -286,7 +286,7 @@ PackageApiService List packages
  * @param "Namespace" (optional.String) -  Filter by namespace
  * @param "Query" (optional.String) -  Lookup value for package search
  * @param "MediaType" (optional.String) -  Filter by media-type
-@return []Package
+@return []PackageDescription
 */
 
 type ListPackagesOpts struct {
@@ -295,14 +295,14 @@ type ListPackagesOpts struct {
 	MediaType optional.String
 }
 
-func (a *PackageApiService) ListPackages(ctx context.Context, localVarOptionals *ListPackagesOpts) ([]Package, *http.Response, error) {
+func (a *PackageApiService) ListPackages(ctx context.Context, localVarOptionals *ListPackagesOpts) ([]PackageDescription, *http.Response, error) {
 	var (
 		localVarHttpMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  []Package
+		localVarReturnValue  []PackageDescription
 	)
 
 	// create path and map variables
@@ -360,7 +360,7 @@ func (a *PackageApiService) ListPackages(ctx context.Context, localVarOptionals 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []Package
+			var v []PackageDescription
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

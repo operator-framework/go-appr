@@ -146,7 +146,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Packages'
+                $ref: '#/components/schemas/PackageList'
           description: successful operation
       summary: List packages
       tags:
@@ -1004,6 +1004,73 @@ components:
           type: string
       title: Package
       type: object
+    PackageDescription:
+      description: Package Item object
+      example:
+        visibility: visibility
+        channels:
+        - channels
+        - channels
+        updated_at: updated_at
+        manifests:
+        - manifests
+        - manifests
+        name: name
+        namespace: namespace
+        created_at: created_at
+        releases:
+        - releases
+        - releases
+      properties:
+        visibility:
+          description: visibility
+          title: visibility
+          type: string
+        manifests:
+          items:
+            description: manifest-type
+            title: media-type
+            type: string
+          type: array
+        channels:
+          items:
+            description: List channels for that release
+            title: channel-name
+            type: string
+          title: channels
+          type: array
+        created_at:
+          description: Package creation date
+          pattern: \d{4}-\d{1,2}-\d{1,2}T\d{2}:\d{2}:\d{2}.\d+
+          title: created_at
+          type: string
+        updated_at:
+          description: Package creation date
+          pattern: \d{4}-\d{1,2}-\d{1,2}T\d{2}:\d{2}:\d{2}.\d+
+          title: created_at
+          type: string
+        name:
+          description: Package name
+          title: package-name
+          type: string
+        namespace:
+          description: namespace
+          title: namespace
+          type: string
+        releases:
+          items:
+            description: Package release
+            title: package-release
+            type: string
+          type: array
+      title: Package Item
+      type: object
+    PackageList:
+      description: List of Package
+      items:
+        $ref: '#/components/schemas/PackageDescription'
+      title: PackageList
+      type: array
     PullJson:
       description: Package content
       example:

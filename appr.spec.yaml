@@ -205,7 +205,7 @@ paths:
         "200":
           description: successful operation
           schema:
-            $ref: "#/definitions/Packages"
+            $ref: "#/definitions/PackageList"
 
   /api/v1/packages/{namespace}/{package}:
     get:
@@ -948,6 +948,61 @@ definitions:
         type: string
         title: package-release
         description: Package release
+
+  PackageDescription:
+    type: object
+    title: Package Item
+    description: Package Item object
+    properties:
+      visibility:
+        type: string
+        title: visibility
+        description: visibility
+      manifests:
+        type: array
+        items:
+          type: string
+          title: media-type
+          description: manifest-type
+      channels:
+        title: channels
+        type: array
+        items:
+          type: string
+          title: channel-name
+          description: List channels for that release
+      created_at:
+        type: string
+        pattern: '\d{4}-\d{1,2}-\d{1,2}T\d{2}:\d{2}:\d{2}.\d+'
+        title: created_at
+        description: Package creation date
+      updated_at:
+        type: string
+        pattern: '\d{4}-\d{1,2}-\d{1,2}T\d{2}:\d{2}:\d{2}.\d+'
+        title: created_at
+        description: Package creation date
+      name:
+        type: string
+        title: package-name
+        description: Package name
+      namespace:
+        type: string
+        title: namespace
+        description: namespace
+      releases:
+        type: array
+        items:
+          type: string
+          title: package-release
+          description: Package release
+
+
+  PackageList:
+    type: array
+    title: PackageList
+    description: List of Package
+    items:
+      $ref: "#/definitions/PackageDescription"
 
   PullJson:
     type: object

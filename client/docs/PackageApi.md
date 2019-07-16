@@ -93,7 +93,7 @@ No authorization required
 
 ## ListPackages
 
-> []map[string]interface{} ListPackages(ctx, optional)
+> []PackageDescription ListPackages(ctx, optional)
 List packages
 
 ### Required Parameters
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]map[string]interface{}**](map[string]interface{}.md)
+[**[]PackageDescription**](PackageDescription.md)
 
 ### Authorization
 
