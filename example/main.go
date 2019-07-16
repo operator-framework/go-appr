@@ -1,12 +1,3 @@
-# go-appr
-This package is a collection of `openapi-generator` generated client bindings for `App Registry` which can be used to talk to `quay.io` or [appr](https://github.com/app-registry/appr) to pull down application packages.
-
-Swagger spec file has been obtained from here -  [appr-api-swagger.yaml](https://github.com/app-registry/appr/blob/master/Documentation/server/appr-api-swagger.yaml)
-
-### Example
-Below is an example of how you can use the client bindings to connect to an `app registry` server and invoke its APIs. This example assumes that an instance of `appr` is running on your machine (`localhost:5000`). For more information on how to run `appr` server on local environment visit https://github.com/app-registry/appr
-
-```go
 package main
 
 import (
@@ -43,4 +34,3 @@ func listPackages(client *apprclient.APIClient) ([]apprclient.Package, error) {
 
 	return packages, nil
 }
-```
